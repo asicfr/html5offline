@@ -1,0 +1,39 @@
+localhost:8080/html5offline/index.html
+
+A faire : 
+
+- off line 
+- local storage
+- angularjs
+- boostrap twitter
+- Modernizr
+- Qunit
+
+
+
+
+
+CACHE MANIFEST
+# v 1.1
+
+CACHE:
+index.html
+bootstrap-responsive.min.css
+bootstrap.min.css
+glyphicons-halflings-white.png
+glyphicons-halflings.png
+bootstrap.min.js
+jquery.js
+offline.js
+
+# modernizr.js
+
+
+#ressources accessibles uniquement en ligne (pas sauvegardees)
+#syntaxe : url_fichier_original url_fichier_fallback
+# NETWORK:
+
+
+#ressources a renvoyer dans le cas de non disponibilite des ressources demandees. 
+# FALLBACK:
+

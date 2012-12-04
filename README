@@ -1,0 +1,15 @@
+Webapp natures :
+- Struts 2 with generic configuration
+- JPA 2 annotation
+- Stateless
+- Full I18N
+- Twitter bootstrap
+- With a little REST spirit in 
+
+
+1 - Download Derby Bookstore (see 	BookstoreDB_X.X_DerbyX.X.zip  at  http://forge.ow2.org/project/showfiles.php?group_id=196)
+2 - Launch derby : BookstoreDB_v2/start.bat
+3 - launch webapp with tomcat
+4 - open webapp
+   http://<host>:<port>/<root>/
+   http://<host>:<port>/<root>/book/

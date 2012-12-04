@@ -1,0 +1,16 @@
+CACHE MANIFEST
+
+# Build 2012-12-03
+
+CACHE:
+css/bootstrap-responsive.min.css
+css/bootstrap.min.css
+img/glyphicons-halflings-white.png
+img/glyphicons-halflings.png
+js/bootstrap.min.js
+js/jquery.js
+js/offline.js
+
+NETWORK:
+http://*
+https://*
