@@ -1,13 +1,75 @@
-localhost:8080/html5offline/index.html
+
+http://localhost:8080/html5offline/index.html
+http://localhost:8080/html5offline/angular-notes/index.html
+http://www.raymondcamden.com/index.cfm/2011/11/29/My-first-AngularJS-application
+
+A lire : 
+http://docs.angularjs.org/guide/concepts
+http://docs.angularjs.org/guide
+http://docs.angularjs.org/cookbook/index
+
+chrome://appcache-internals/
+
 
 A faire : 
 
-- off line 
+[ok] - off line 
+[ok] - boostrap twitter
+- angularjs  --> data-ng- notation
+   ie : http://docs-next.angularjs.org/guide/ie
+- page d'accueil avec liste de toutes les entités
+	elle connait toutes les routes vers les autres pages	
 - local storage
-- angularjs
-- boostrap twitter
+- apk phonegap ?
 - Modernizr
 - Qunit
+
+
+------------------------------------------------------------------------------------------
+
+i18n et l10n : avec des fichiers javascript en fonction de la langue : 
+voir http://www.frangular.com/2012/12/traduction-des-libelles-dans-les-vues-angularjs.html
+voir http://docs.angularjs.org/guide/i18n
+
+------------------------------------------------------------------------------------------
+offline
+
+il faudrait afficher dans l'ihm le mode en cours (offline / online), si l'application cache est utilisé
+
+Comment tester le offline ?
+voir Unit Testing : http://docs.angularjs.org/guide/module
+voir http://docs.angularjs.org/guide/dev_guide.e2e-testing
+
+------------------------------------------------------------------------------------------
+
+Create a set of functions that you can reuse
+	
+	This is again done in the app.js file
+	
+	app.factory('db', function() {
+	  var items = [];
+	  
+	  var modify = {};
+	  var modify.addItem = function(item) {
+	    items.push(item);
+	    return 'added item';
+	  };
+	  var modify.getItems = function() {
+	    return items;
+	  }
+	  return modify; // returning this is very important
+	});
+	
+	now, in your controller, you can access these as follows
+	function MainCtrl = function ($scope, db) {
+	  $scope.save = function() {
+	    db.addItem('hello');
+	    console.log( db.getItems() );
+	  };
+	}
+	
+
+------------------------------------------------------------------------------------------
 
 
 
@@ -24,7 +86,7 @@ glyphicons-halflings-white.png
 glyphicons-halflings.png
 bootstrap.min.js
 jquery.js
-offline.js
+datastore.js
 
 # modernizr.js
 

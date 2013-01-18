@@ -1,0 +1,25 @@
+
+<div id="bookList" ng-controller="BookCtrl">
+ 
+    <h2>Books list</h2>
+ 
+    <ul>
+        <li ng-repeat="onebook in books">
+            <a href="#/book/{{onebook.id}}">{{onebook.title}}</a>
+        </li>
+    </ul>
+ 
+</div>
+
+<!-- 
+	id
+	publisherId
+	authorId
+	isbn
+	title
+	price
+	quantity
+	discount
+	availability
+	bestSeller
+ -->

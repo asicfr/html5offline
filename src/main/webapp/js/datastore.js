@@ -1,10 +1,14 @@
- 
+// Modernizr.applicationcache
+
+// Modernizr.localstorage
+
+
 function getData(){
 	if(window.localStorage){
 		for(var i=0; i<window.localStorage.length;i++){
 			var key = window.localStorage.key(i);
 			var value = window.localStorage.getItem(key);
-                                    displayData(value);
+			displayData(value);
 		}
 	}
 }
@@ -13,9 +17,9 @@ function saveData(){
 	var texte = document.getElementById("data").value;
 	if(texte){
 		if(window.localStorage){
-		window.localStorage.setItem(key, texte);
+			window.localStorage.setItem(key, texte);
 		}
-                        displayData(texte);
+		displayData(texte);
 	}
 }
  
