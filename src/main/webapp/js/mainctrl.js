@@ -1,9 +1,18 @@
 // Global module
 var bookStore = angular.module('bookStore', ['bookStore.main', 'bookStore.book']);
 
+// Add usefull fct into rootScope
+bookStore.run(function($rootScope) {
+
+	$rootScope.logMe = function (logentry) {
+		console.log(logentry);
+	};
+	
+});
+
 // Welcome module
 var bookStoremain = angular.module('bookStore.main', [], function($routeProvider, $locationProvider) {
-
+	
 	// Declare welcome route
 	$routeProvider.when('/welcome', {
 		templateUrl : 'main/welcome.html',

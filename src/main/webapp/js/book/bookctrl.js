@@ -1,24 +1,56 @@
-// Book module add into global module of mainctrl.js
-var bookStorebook = angular.module('bookStore.book', ['bookServicesModule'], function($routeProvider, $locationProvider) {
+// Book module add into global module (see mainctrl.js)
+var bookStorebook = angular.module('bookStore.book', ['bookStore.book.services'], function($routeProvider, $locationProvider) {
 
 	// Book list
 	$routeProvider.when('/book', {
-		templateUrl: 'book/list.html',
-	    controller: 'BookCtrl'
+		templateUrl: 'book/list.html'
 	});
 
+	// Book create
+	$routeProvider.when('/book/create', {
+		templateUrl: 'book/create.html'
+	});
+
+	// Book edit
+	$routeProvider.when('/book/:id', {
+		templateUrl: 'book/edit.html'
+	});
+
+	// Declare default route
+	$routeProvider.otherwise({
+		redirectTo : '/book'
+	});
+	
 });
 
-// Book Controller
-bookStorebook.controller('BookCtrl', ['$scope', '$location', '$routeParams', 'ApiBook', function ($scope, $location, $routeParams, ApiBook) {
+// Book Controllers
+bookStorebook.controller('BookListCtrl', ['$scope', '$location', '$routeParams', '$rootScope', 'ApiBook', function ($scope, $location, $routeParams, $rootScope, ApiBook) {
+	$rootScope.logMe("BookListCtrl");
 	var self = this;
 	
-	// List of Todos, loaded by the Todo service
 	$scope.books = ApiBook.query();
+
+}]);
+
+
+bookStorebook.controller('BookDetailCtrl', ['$scope', '$location', '$routeParams', '$rootScope', 'ApiBook', function ($scope, $location, $routeParams, $rootScope, ApiBook) {
+	$rootScope.logMe("BookDetailCtrl");
+	var self = this;
+	$scope.idCurrent = $routeParams.id;
 	
-	// Navigation to the "New Todo" page
-	$scope.openBookNewPage = function () {
-		$location.path("/book/new");
+	$rootScope.logMe("get book ");
+	$scope.onebook = ApiBook.get($scope.idCurrent);
+
+	// Book save
+	$scope.saveBook = function () {
+		$rootScope.logMe("saveBook");
+		ApiBook.save();
+	};
+
+	// Book remove
+	$scope.removeBook = function () {
+		$rootScope.logMe("removeBook");
+		ApiBook.remove($scope.idCurrent);
 	};
 	
 }]);

@@ -1,9 +1,27 @@
 // Book services
-var bookServicesModule = angular.module('bookServicesModule', []).factory('ApiBook', function() {
+var bookServicesModule = angular.module('bookStore.book.services', []).factory('ApiBook', function($rootScope, $http) {
     return {
-        name: 'ApiBook',
+        get: function (id) {
+    		$rootScope.logMe("get " + id);
+    		
+    		// TODO localstorage
+    		
+        },
+        save: function () {
+    		$rootScope.logMe("save");
+    		
+    		// TODO localstorage
+    		
+        },
+        remove: function (id) {
+    		$rootScope.logMe("remove " + id);
+    		
+    		// TODO localstorage
+    		
+        },
         query: function () {
-        	var jsonBooksList = [
+    		$rootScope.logMe("query");
+        	var jsonBooksList = [	
         		{"id": "1",
         			"publisherId": "1",
         			"authorId": "1",
@@ -15,7 +33,7 @@ var bookServicesModule = angular.module('bookServicesModule', []).factory('ApiBo
         			"availability": "1",
         			"bestSeller": "0"
         		},
-        		{"id": "",
+        		{"id": "2",
         			"publisherId": "2",
         			"authorId": "1",
         			"isbn": "23213123",
@@ -26,7 +44,7 @@ var bookServicesModule = angular.module('bookServicesModule', []).factory('ApiBo
         			"availability": "1",
         			"bestSeller": "0"
         		},
-        		{"id": "",
+        		{"id": "3",
         			"publisherId": "3",
         			"authorId": "1",
         			"isbn": "211333333",
