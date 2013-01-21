@@ -16,41 +16,84 @@ var bookStorebook = angular.module('bookStore.book', ['bookStore.book.services']
 		templateUrl: 'book/edit.html'
 	});
 
-	// Declare default route
-	$routeProvider.otherwise({
-		redirectTo : '/book'
-	});
-	
 });
 
 // Book Controllers
-bookStorebook.controller('BookListCtrl', ['$scope', '$location', '$routeParams', '$rootScope', 'ApiBook', function ($scope, $location, $routeParams, $rootScope, ApiBook) {
+bookStorebook.controller('BookListCtrl', ['$scope', '$location', '$routeParams', '$rootScope', 'ApiBook', 'ApiStorage', function ($scope, $location, $routeParams, $rootScope, ApiBook, ApiStorage) {
 	$rootScope.logMe("BookListCtrl");
 	var self = this;
 	
-	$scope.books = ApiBook.query();
+	$scope.books = ApiBook.search();
+	$rootScope.logMe("search end");
+
+	// new Book call
+	$scope.openCreateBookPage = function () {
+		$rootScope.logMe("openCreateBookPage");
+		$location.path("/book/create");
+	};
 
 }]);
 
 
-bookStorebook.controller('BookDetailCtrl', ['$scope', '$location', '$routeParams', '$rootScope', 'ApiBook', function ($scope, $location, $routeParams, $rootScope, ApiBook) {
+bookStorebook.controller('BookDetailCtrl', ['$scope', '$location', '$routeParams', '$rootScope', 'ApiBook', 'ApiStorage', function ($scope, $location, $routeParams, $rootScope, ApiBook, ApiStorage) {
 	$rootScope.logMe("BookDetailCtrl");
-	var self = this;
 	$scope.idCurrent = $routeParams.id;
 	
 	$rootScope.logMe("get book ");
 	$scope.onebook = ApiBook.get($scope.idCurrent);
-
-	// Book save
-	$scope.saveBook = function () {
-		$rootScope.logMe("saveBook");
-		ApiBook.save();
+	
+	if ($scope.onebook === undefined) {
+		toastr.error("An error has occurred !");
+	}
+	
+	// Book update
+	$scope.updateBook = function () {
+		$rootScope.logMe("updateBook");
+		if (ApiBook.update($scope.idCurrent, $scope.onebook)) {
+			toastr.success("The book has been successfully updated");
+		} else {
+			toastr.error("An error has occurred !");
+		}
 	};
 
 	// Book remove
 	$scope.removeBook = function () {
 		$rootScope.logMe("removeBook");
-		ApiBook.remove($scope.idCurrent);
+		if (ApiBook.remove($scope.idCurrent)) {
+			toastr.success("The book has been successfully removed");
+			$location.path("/book");
+		} else {
+			toastr.error("An error has occurred !");
+		}
 	};
+
+	// Return to list
+	$scope.openListBookPage = function () {
+		$rootScope.logMe("openListBookPage");
+		$location.path("/book");
+	};
+
+}]);
+
+bookStorebook.controller('BookCreateCtrl', ['$scope', '$location', '$routeParams', '$rootScope', 'ApiBook', function ($scope, $location, $routeParams, $rootScope, ApiBook) {
+	$rootScope.logMe("BookCreateCtrl");
+	$scope.onebook = {};
 	
+	// Book save
+	$scope.saveBook = function () {
+		$rootScope.logMe("saveBook");
+		if (ApiBook.create($scope.onebook)) {
+			toastr.success("The book has been successfully created");
+			$location.path("/book");
+		} else {
+			toastr.error("An error has occurred !");
+		}
+	};
+
+	// Return to list
+	$scope.openListBookPage = function () {
+		$rootScope.logMe("openListBookPage");
+		$location.path("/book");
+	};
+
 }]);

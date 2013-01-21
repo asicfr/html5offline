@@ -1,12 +1,69 @@
 
-<div id="bookCreate" ng-controller="BookDetailCtrl">
+<div id="bookCreate" ng-controller="BookCreateCtrl">
  
     <h2>Book Create</h2>
  
+ 	<form class="form-horizontal">
+ 		<div class="control-group">
+			<label class="control-label" for="publisherId">publisher Id</label>
+			<div class="controls">
+				<input type="text" id="publisherId" ng-model="onebook.publisherId" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="authorId">author Id</label>
+			<div class="controls">
+				<input type="text" id="authorId" ng-model="onebook.authorId" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="isbnId">isbn</label>
+			<div class="controls">
+				<input type="text" id="isbnId" ng-model="onebook.isbn" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="titleId">title</label>
+			<div class="controls">
+				<input type="text" id="titleId" ng-model="onebook.title" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="priceId">price</label>
+			<div class="controls">
+				<input type="text" id="priceId" ng-model="onebook.price" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="quantityId">quantity</label>
+			<div class="controls">
+				<input type="text" id="quantityId" ng-model="onebook.quantity" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="discountId">discount</label>
+			<div class="controls">
+				<input type="text" id="discountId" ng-model="onebook.discount" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="availabilityId">availability</label>
+			<div class="controls">
+				<input type="text" id="availabilityId" ng-model="onebook.availability" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="bestSellerId">best Seller</label>
+			<div class="controls">
+				<input type="text" id="bestSellerId" ng-model="onebook.bestSeller" />
+			</div>
+		</div>
 
+	</form>
+
+ 	<br />
     <button ng-click="saveBook()">Save</button>
-    
-	<a href="#/book">Return to list</a>
+	<button ng-click="openListBookPage()">Return to list</button>
   
 </div>
 

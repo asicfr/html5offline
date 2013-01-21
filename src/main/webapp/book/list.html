@@ -4,11 +4,12 @@
     <h2>Books list</h2>
  
     <ul>
-        <li ng-repeat="onebook in books">
-            <a href="#/book/{{onebook.id}}">{{onebook.title}}</a>
+        <li ng-repeat="(key, value) in books">
+            <a href="#/book/{{key}}">{{value.title}}</a>
         </li>
     </ul>
  
-	<a href="#/book/create">New</a>
+ 	<br />
+ 	<button ng-click="openCreateBookPage()">New</button>
  
 </div>
