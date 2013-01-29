@@ -1,17 +1,38 @@
-# CACHE MANIFEST
-# 
-# # Build 2012-12-17-16h27
-# 
-# CACHE:
-# css/bootstrap-responsive.min.css
-# css/bootstrap.min.css
-# img/glyphicons-halflings-white.png
-# img/glyphicons-halflings.png
-# js/bootstrap.min.js
-# js/jquery.js
-# js/datastore.js
-# 
-# NETWORK:
-# http://*
-# https://*
-# 
+CACHE MANIFEST
+ 
+# Build 2013-01-29-14h52
+ 
+CACHE:
+css/bootstrap-responsive.min.css
+css/bootstrap.min.css
+css/custom.css
+css/toastr.css
+
+img/glyphicons-halflings-white.png
+img/glyphicons-halflings.png
+
+js/angular.min.js
+js/bootstrap.min.js
+js/jquery.js
+js/modernizr.custom.js
+js/datastore.js
+js/offline.js
+js/toastr.js
+js/mainctrl.js
+js/cacheApp.js
+
+js/book/bookctrl.js
+js/book/booksrv.js
+
+main/footer.html
+main/header.html
+main/inprogress.html
+main/welcome.html
+
+book/create.html
+book/edit.html
+book/list.html
+
+NETWORK:
+http://*
+https://*

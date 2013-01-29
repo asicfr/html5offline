@@ -1,7 +1,4 @@
 // Datastore services
-// gerer une structure json en mémoire pour les données
-// la persister a chaque modification dans le localstorage
-// TODO a separer d'angularjs
 
 var storageServicesModule = angular.module('bookStore.storage.services', []).factory('ApiStorage', function($rootScope, $http) {
     return {

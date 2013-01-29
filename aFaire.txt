@@ -1,8 +1,6 @@
 
 Pour lancer l'application : 
-
 http://localhost:8080/html5offline/index.html
-http://localhost:8080/html5offline/angular-notes/index.html
 
 A lire : 
 http://www.raymondcamden.com/index.cfm/2011/11/29/My-first-AngularJS-application
@@ -30,10 +28,11 @@ A faire :
 [ok] - finir save en recuperant le book en cours
 [ok] - finir remove en recuperant le book en cours
 [ok] - confirmation / erreur avec toastr
+[ok] - off line + monitoring du mode en cours + clean ?
 - gestion des exceptions ?
-- off line + monitoring du mode en cours + clean ?
 - apk phonegap
 - tests unitaires
+
 
 ------------------------------------------------------------------------------------------
 

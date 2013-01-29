@@ -1,1 +1,10 @@
-
+Pur Web Application with :
+- only html5 and javascript
+- angularjs controllers, services
+- localstorage
+- full offline nature
+- Twitter bootstrap
+- modernizr html5 detection
+- app cache monitoring
+- online / offline monitoring
+- toastr notification
