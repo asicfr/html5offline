@@ -1,9 +1,13 @@
 
+Pour lancer l'application : 
 http://localhost:8080/html5offline/index.html
-http://localhost:8080/html5offline/angular-notes/index.html
-http://www.raymondcamden.com/index.cfm/2011/11/29/My-first-AngularJS-application
 
 A lire : 
+http://www.raymondcamden.com/index.cfm/2011/11/29/My-first-AngularJS-application
+http://thecodersbreakfast.net/index.php?post/2012/07/30/D%C3%A9velopper-une-application-REST-avec-Spring-MVC-Angular.js
+http://www.itaware.eu/2012/08/26/angularjs-navigation-et-routage/
+http://jkyamog.blogspot.fr/2012/08/angularjs-for-ajax-crud.html
+
 http://docs.angularjs.org/guide/concepts
 http://docs.angularjs.org/guide
 http://docs.angularjs.org/cookbook/index
@@ -12,17 +16,22 @@ chrome://appcache-internals/
 
 
 A faire : 
-
-[ok] - off line 
 [ok] - boostrap twitter
-- angularjs  --> data-ng- notation
-   ie : http://docs-next.angularjs.org/guide/ie
-- page d'accueil avec liste de toutes les entités
-	elle connait toutes les routes vers les autres pages	
-- local storage
-- apk phonegap ?
-- Modernizr
-- Qunit
+[ok] - mise en place angularjs
+[ok] - Modernizr
+[ok] - main ctrl
+[ok] - fct tools
+[ok] - book ctrl
+[ok] - separation ctrl / services 
+[ok] - la liste ne s'affiche plus ... comment ca fonctionne entre le ctrl et les routes ?
+[ok] - finir les pages edit, list et create de book
+[ok] - finir save en recuperant le book en cours
+[ok] - finir remove en recuperant le book en cours
+[ok] - confirmation / erreur avec toastr
+[ok] - off line + monitoring du mode en cours + clean ?
+- gestion des exceptions ?
+- apk phonegap
+- tests unitaires
 
 
 ------------------------------------------------------------------------------------------
@@ -35,6 +44,10 @@ voir http://docs.angularjs.org/guide/i18n
 offline
 
 il faudrait afficher dans l'ihm le mode en cours (offline / online), si l'application cache est utilisé
+
+offline localstorage et online synchronisation :  
+- http://www.breezejs.com/
+- http://www.breezejs.com/samples/todo-angular
 
 Comment tester le offline ?
 voir Unit Testing : http://docs.angularjs.org/guide/module
