@@ -1,8 +1,8 @@
 
-<div id="bookCreate" ng-controller="BookCreateCtrl">
+<div id="bookEdit" ng-controller="BookDetailCtrl">
  
-    <h2>Book Create</h2>
- 
+    <h2>Book Edit</h2>
+    
  	<form class="form-horizontal">
  		<div class="control-group">
 			<label class="control-label" for="publisherId">publisher Id</label>
@@ -60,10 +60,12 @@
 		</div>
 
 	</form>
-
  	<br />
-    <button ng-click="saveBook()">Save</button>
+    <button ng-click="updateBook()">Save</button>
+    <button ng-click="removeBook()">Remove</button>
 	<button ng-click="openListBookPage()">Return to list</button>
-  
+ 
 </div>
 
+<!-- 
+ -->

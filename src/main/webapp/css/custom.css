@@ -1,0 +1,17 @@
+.status_span {
+	float: none;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #FFFFFF;
+    display: block;
+}
+
+.status_offline {
+  background: #c00;
+  color:#fff;
+}
+
+.status_online {
+  background: #0c0;
+  color:#fff;
+}

@@ -1,25 +1,15 @@
 
-<div id="bookList" ng-controller="BookCtrl">
+<div id="bookList" ng-controller="BookListCtrl">
  
     <h2>Books list</h2>
  
     <ul>
-        <li ng-repeat="onebook in books">
-            <a href="#/book/{{onebook.id}}">{{onebook.title}}</a>
+        <li ng-repeat="(key, value) in books">
+            <a href="#/book/{{key}}">{{value.title}}</a>
         </li>
     </ul>
  
+ 	<br />
+ 	<button ng-click="openCreateBookPage()">New</button>
+ 
 </div>
-
-<!-- 
-	id
-	publisherId
-	authorId
-	isbn
-	title
-	price
-	quantity
-	discount
-	availability
-	bestSeller
- -->
